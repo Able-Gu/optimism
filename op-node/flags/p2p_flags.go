@@ -110,7 +110,8 @@ func P2PFlags(envPrefix string) []cli.Flag {
 			Name:     BanningDurationName,
 			Usage:    "The duration that peers are banned for.",
 			Required: false,
-			Value:    1 * time.Hour,
+			//Value:    1 * time.Hour,
+			Value:    1 * time.Second,
 			EnvVars:  p2pEnv(envPrefix, "PEER_BANNING_DURATION"),
 		},
 		&cli.StringFlag{
