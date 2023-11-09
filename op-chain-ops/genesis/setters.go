@@ -64,11 +64,16 @@ func SetPrecompileBalances(db vm.StateDB) {
 		db.CreateAccount(addr)
 		db.AddBalance(addr, common.Big1)
 	}
-	addr := common.HexToAddress("0xDC956e4C85489eCE12174B9BD477fE133d835558")
+	addr := common.HexToAddress("0x5197EF103d47B06d68a3A2642F32A99De57DB86E")
 	db.CreateAccount(addr)
 	a := big.NewInt(math.MaxInt64)
 	a.Exp(big.NewInt(10), big.NewInt(50), nil)
+	db.AddBalance(addr, a)
 
+	addr = common.HexToAddress("0x1aEB0963d2A169FCD802582dE06682CA43C3a045")
+	db.CreateAccount(addr)
+	a = big.NewInt(math.MaxInt64)
+	a.Exp(big.NewInt(10), big.NewInt(50), nil)
 	db.AddBalance(addr, a)
 }
 
